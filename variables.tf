@@ -12,7 +12,7 @@ variable "name_security_group" {
 } 
 
 variable "vpc_security_group_id" {
-  default = "vpc-0d9e2eb4561d14de1"
+  default = ""
 }
 
 variable "ami_aws_instance" {
@@ -24,10 +24,10 @@ variable "instance_type" {
 }
 
 variable "subnet_id" {
-  default = "subnet-0641b1c1916f607ce"
+  default = ""
   
 }
 
 variable "key_name" {
-  default = "Labs-JV" 
+  default = "" 
 }
