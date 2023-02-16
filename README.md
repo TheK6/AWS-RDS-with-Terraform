@@ -1,24 +1,37 @@
  # TAILSCALE VPN 
 
-### • Criar uma chave auth
-### • Instalar o Tailscale
-### • Configurar o Subnet Router
-### • Autorizar as Subnets
-### • Configurar a ACL
-### • Testando a VPN
+#### • Criar uma chave auth
+#### • Instalar o Tailscale
+#### • Configurar o Subnet Router
+#### • Autorizar as Subnets
+#### • Configurar a ACL
+#### • Testando a VPN
 </br>
 
 ## Criar uma chave auth
 </br>
 Na sua conta TAILSCALE:</br>
 Selecione <b>Settings</b> e depois <b>Keys</b>.</br>
-![Settings](https://i.imgur.com/bx0WNSN.png)
 
+![Settings](https://i.imgur.com/fGiAIbc.png)
+
+![Keys](https://i.imgur.com/WtNdyxu.png)
 
 Selecione <b>Generate auth key</b>.</br>
-Na janela de criação de chave de autorização, habilite a opção: <b>Reusable</b></br>
+
+![Gen Key](https://i.imgur.com/ixSsaEf.png)
+
+Na janela de criação de chave de autorização, habilite a opção: <b>Reusable</b> e **Ephemeral** </br>
+
+![Gen Key](https://i.imgur.com/irdTABc.png)
+
 Selecione <b>Generate key</b>.</br>
+
+![Gen Key](https://i.imgur.com/FHwvZ5o.png)
+
 Copie a chave criada e salve-a em algum lugar seguro.</br>
+
+</br></br>
 
 ## Instalando o Tailscale </br>
 
@@ -32,6 +45,8 @@ sudo tailscale up --auth-key="A-SUA-CHAVE-AQUI"
 
 ```
 Pronto, o Tailscale deveria estar instalado.
+
+</br></br>
 
 ## Configurar o Subnet Router
 </br>
@@ -55,27 +70,51 @@ E para configurar como Roteador das subnets:
 
 Pronto, agora finalizar a configuração volte na GUI do Tailscale
 
+</br></br>
+
 ## Autorizar as Subnets
 
 Vá na aba <b>Machines</b></br>
 Na instância que é está fazendo o roteamento, as subnets devem aparecer abaixo do IP da instancia. (cinza claro).</br>
+
+![Subnets](https://i.imgur.com/sATHQVf.png)
+
 Selecione as opções da maquina: No lado direito clique em: <b>•••</b></br>
+
 Selecione <b>Edit Route Settings</b></br>
+
+![Route Settings](https://i.imgur.com/d9cX4Mo.png)
+
 Clique em <b> Aprove all</b> 
+
+![Approve Routes](https://i.imgur.com/D7EHCem.png)
 
 Pronto. As subnets estão configuradas. Agora falta liberar pela ACL. 
 
+</br></br>
 
 ## Configurar a ACL
 
 Vá na aba <b>Access Controls</b></br>
+
+![ACLs](https://i.imgur.com/to8UB7V.png)
+
 Busque o CIDR block que a sua VPC está usando, busque a seção "Access Control Lists. acls:" </br>
 Na seção <b>"src"</b> insira o CIDR block da sua VPC (e também qualquer grupo que você vai dar acesso)</br>
+
+![src](https://i.imgur.com/Emc4AEw.png)
+
 Na seção <b>"dst"</b> insira o CIDR block da sua VPC, depois ":" e depois um * </br>
+
+![dst](https://i.imgur.com/mxcJcQG.png)
+
 Clique em <b> SAVE</b> para salvar as mudanças. 
+
+![save](https://i.imgur.com/Ik1qDLs.png)
 
 Subnets Configuradas!
 
+</br></br>
 
 ## Testando a VPN
 
