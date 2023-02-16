@@ -12,7 +12,7 @@
 </br>
 Na sua conta TAILSCALE:</br>
 Selecione <b>Settings</b> e depois <b>Keys</b>.</br>
-![image](https://user-images.githubusercontent.com/67546769/219420980-b611d6d1-a1b2-435e-9e45-f0feec037b9f.png)
+![alt text](https://github.com/TheK6/AWS-RDS-with-Terraform/blob/main/tailgatesettings.png?raw=true)
 
 Selecione <b>Generate auth key</b>.</br>
 Na janela de criação de chave de autorização, habilite a opção: <b>Reusable</b></br>
