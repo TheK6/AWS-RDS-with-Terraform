@@ -144,6 +144,6 @@ Tailscale ping <private subnet machine IP>
 
 ```
 
-Se você conectou então <b> FUNCIONOU!!!</b> 
+Se você conectou então **FUNCIONOU!!!**</b> 
 
   
