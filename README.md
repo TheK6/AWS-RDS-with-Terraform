@@ -67,8 +67,11 @@ E para configurar como Roteador das subnets:
  
  ```
 
-
 Pronto, agora finalizar a configuração volte na GUI do Tailscale
+
+Para que a chave não expire em até 90 dias. Volte em **Machines** e vá nas opções da maquina, e selecione **Disable key expiry**
+
+![Key expiry](https://i.imgur.com/qwLIExx.png)
 
 </br></br>
 
@@ -87,7 +90,7 @@ Selecione <b>Edit Route Settings</b></br>
 
 Clique em <b> Aprove all</b> 
 
-![Approve Routes](https://i.imgur.com/D7EHCem.png)
+![Approve Routes](https://i.imgur.com/ico6y2o.png)
 
 Pronto. As subnets estão configuradas. Agora falta liberar pela ACL. 
 
