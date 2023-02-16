@@ -99,7 +99,7 @@ Vá na aba <b>Access Controls</b></br>
 
 ![ACLs](https://i.imgur.com/to8UB7V.png)
 
-Busque o CIDR block que a sua VPC está usando, busque a seção "Access Control Lists. acls:" </br>
+Busque o CIDR block que a sua VPC está usando, busque a seção ***"Access Control Lists. acls:"*** </br>
 Na seção <b>"src"</b> insira o CIDR block da sua VPC (e também qualquer grupo que você vai dar acesso)</br>
 
 ![src](https://i.imgur.com/Emc4AEw.png)
