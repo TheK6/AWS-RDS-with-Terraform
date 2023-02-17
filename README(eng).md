@@ -85,66 +85,71 @@ The subnets should be showing in the IP area of the subnet router machine (in li
 
 Go in the options of the machine: the <b>•••</b> on the right side.</br>
 
-Selecione <b>Edit Route Settings</b></br>
+Select <b>Edit Route Settings</b></br>
 
 ![Route Settings](https://i.imgur.com/d9cX4Mo.png)
 
-Clique em <b> Aprove all</b> 
+Click <b> Aprove all</b> 
 
 ![Approve Routes](https://i.imgur.com/ico6y2o.png)
 
-Pronto. As subnets estão configuradas. Agora falta liberar pela ACL. 
+That's it. The subnets are configured. Now we need to set up the ACL. 
 
 </br></br>
 
-## Configurar a ACL
+## Configuring the ACL
 
-Vá na aba <b>Access Controls</b></br>
+In your cloud provider, get your VPC's CIDR block. </br>
+Now back to **Tailscale**
+
+Go to <b>Access Controls</b></br>
 
 ![ACLs](https://i.imgur.com/to8UB7V.png)
 
-Busque o CIDR block que a sua VPC está usando, busque a seção ***"Access Control Lists. acls:"*** </br>
-Na seção <b>"src"</b> insira o CIDR block da sua VPC (e também qualquer grupo que você vai dar acesso)</br>
+
+Look for the section ***"Access Control Lists. acls:"*** </br>
+In the option <b>"src"</b> insert your VPC's CIDR block (and if you have different groups, the groups you will give access to)</br>
 
 ![src](https://i.imgur.com/Emc4AEw.png)
 
-Na seção <b>"dst"</b> insira o CIDR block da sua VPC, depois ":" e depois um * </br>
+In the option <b>"dst"</b> insert your VPC's CIDR block,then ":" then * </br>
 
 ![dst](https://i.imgur.com/mxcJcQG.png)
 
-Clique em <b> SAVE</b> para salvar as mudanças. 
+Click <b> SAVE</b>. 
 
 ![save](https://i.imgur.com/Ik1qDLs.png)
 
-Subnets Configuradas!
+***Subnets Configured!***
 
 </br></br>
 
-## Testando a VPN
+## Testing the VPN
 
-Em uma máquina que não está configurada na rede, instale o Tailscale. 
+Get in a machine that is not in the network.</br>
+Start by installing Tailscale (step 1). 
 
-Aceite as subnets que fazem parte da VPN:
+Then accept the subnets that are part of the VPN:
 
 ```
  sudo tailscale up --advertise-routes=<insira as suas subnets aqui>
  
  ```
 
-E depois:
+Then:
 
 ```
 sudo tailscale up --accept-routes
 
 ```
 
-Pronto. Para validar que você pode as máquinas na private subnetes:
+That's it. Now to the last step to see if everything is working:
 
 ```
 Tailscale ping <private subnet machine IP>
 
 ```
 
-Se você conectou então **FUNCIONOU!!!**</b> 
+If you get a PONG back then ***IT WORKS***
 
   
