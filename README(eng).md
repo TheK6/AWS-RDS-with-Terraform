@@ -132,13 +132,6 @@ Start by installing Tailscale (step 1).
 Then accept the subnets that are part of the VPN:
 
 ```
- sudo tailscale up --advertise-routes=<insira as suas subnets aqui>
- 
- ```
-
-Then:
-
-```
 sudo tailscale up --accept-routes
 
 ```
